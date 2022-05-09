@@ -1,35 +1,43 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 export const languageSlice = createSlice({
-
-    name:'dropDown',
-    initialState:{
-    
+  name: 'dropDown',
+  initialState: {
     languageDropDown: false,
-    language:"English",
+    language: 'English',
     moneyDropDown: false,
-    money:"$",
+    money: '$',
+  },
+
+  reducers: {
+    showLanguageDropDown: (state) => {
+      state.moneyDropDown = false;
+      state.languageDropDown = !state.languageDropDown;
     },
-
-    reducers:{
-
-        showLanguageDropDown:(state)=>{
-            state.moneyDropDown = false;
-            state.languageDropDown = !state.languageDropDown;
-        },
-        changeLanguage:(state, action)=>{
-            state.language = action.payload
-        },
-            
-        showMoneyDropDown:(state)=>{
-            state.languageDropDown = false;
-            state.moneyDropDown = !state.moneyDropDown
-        },
-        changeMoney:(state, action)=>{
-            state.money = action.payload
-        },     
-    }
-
+    changeLanguage: (state, action) => {
+      state.language = action.payload;
+    },
+    closeLanguageDropDown: (state) => {
+      state.languageDropDown = false;
+    },
+    showMoneyDropDown: (state) => {
+      state.languageDropDown = false;
+      state.moneyDropDown = !state.moneyDropDown;
+    },
+    closeMoneyDropDown: (state) => {
+      state.moneyDropDown = false;
+    },
+    changeMoney: (state, action) => {
+      state.money = action.payload;
+    },
+  },
 });
 
-export const {showLanguageDropDown, changeLanguage, showMoneyDropDown, changeMoney} = languageSlice.actions;
+export const {
+  showLanguageDropDown,
+  changeLanguage,
+  showMoneyDropDown,
+  changeMoney,
+  closeMoneyDropDown,
+  closeLanguageDropDown,
+} = languageSlice.actions;
 export default languageSlice.reducer;

@@ -1,12 +1,12 @@
-import React from 'react'
-import TopBar from './topBar.js'
+import React from 'react';
+import TopBar from './Topbar/index.js';
 
 function index() {
   return (
     <div>
-        <TopBar/>
+      <TopBar />
     </div>
-  )
+  );
 }
 
-export default index
+export default index;
