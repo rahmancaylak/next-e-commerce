@@ -21,6 +21,7 @@ md:justify-between
 
 export const RightSide = tw.div`
 flex
+mr-5
 items-center
 gap-x-3
 `;
