@@ -1,8 +1,10 @@
-import tw from "tailwind-styled-components";
+import tw from 'tailwind-styled-components';
 
 export const Section = tw.section`
 bg-primary
 text-white
+z-10
+relative
 `;
 
 export const Container = tw.div`
@@ -45,7 +47,7 @@ rounded
 `;
 
 export const LanguageList = tw.li`
-${(p) => (p.$isActive && "bg-gray-200 font-semibold")}
+${(p) => p.$isActive && 'bg-gray-200 font-semibold'}
 p-1
 text-neutral-600
 hover:bg-gray-100
@@ -58,7 +60,6 @@ w-full
 text-center
 cursor-pointer
 `;
-
 
 export const MoneySection = LanguageSection;
 export const MoneyButton = LanguageButton;
