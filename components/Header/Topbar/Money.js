@@ -22,7 +22,7 @@ export default function Money() {
   const Money = useSelector((state) => state.topBar.money);
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (!ref.current.contains(event.target)) {
+      if (!ref.current?.contains(event.target)) {
         dispatch(closeMoneyDropDown());
       }
     };

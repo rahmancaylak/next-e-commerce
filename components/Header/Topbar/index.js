@@ -5,7 +5,7 @@ import Language from './Language.js';
 
 export default function TopBar() {
   return (
-    <Section>
+    <Section className='z-10 relative'>
       <Container>
         <p className='text-sm text-center md:text-left md:text-lg'>
           Welcome to Ecomart in Your Dream Online Store!
