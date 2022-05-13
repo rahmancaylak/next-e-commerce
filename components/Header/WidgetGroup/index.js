@@ -1,4 +1,4 @@
-import React from 'react';
+// Components
 import Profile from './Profile';
 import Basket from './Basket';
 import Favorite from './Favorite';
