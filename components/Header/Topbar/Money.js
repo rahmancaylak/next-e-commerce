@@ -1,5 +1,14 @@
 import React, { useRef, useEffect } from 'react';
+// Icons
+import { MdKeyboardArrowDown } from 'react-icons/md';
+// Redux
 import { useSelector, useDispatch } from 'react-redux';
+import {
+  showMoneyDropDown,
+  changeMoney,
+  closeMoneyDropDown,
+} from '../../../redux/states/header/topBar/topBar.js';
+// Tailwind Styled Components
 import {
   MoneySection,
   MoneyButton,
@@ -7,12 +16,7 @@ import {
   MoneyList,
   ChooseMoney,
 } from '../../../styles/Header/topBar';
-import {
-  showMoneyDropDown,
-  changeMoney,
-  closeMoneyDropDown,
-} from '../../../redux/states/header/topBar/topBar.js';
-
+// Animation
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Money() {
@@ -33,16 +37,19 @@ export default function Money() {
     <>
       <MoneySection ref={ref}>
         <MoneyButton onClick={() => dispatch(showMoneyDropDown())}>
-          <h5>{Money}</h5>
+          <h5 className='flex items-center'>
+            {Money}{' '}
+            <MdKeyboardArrowDown
+              size={20}
+              className={`${
+                moneyDropDownCheck && 'rotate-180'
+              } ease-in-out duration-300 `}
+            />
+          </h5>
         </MoneyButton>
         <AnimatePresence>
           {moneyDropDownCheck && (
             <motion.div
-              //initial:animasyon başlangıç değerleri
-              //animate:animasyonun bitiş değerleri
-              //exit:animasyonun geri sarma final değerleri
-              //transition:animasyonun gerçekleşme süresi
-              //Not: "motion.div" ile hareket edecek olan yapıyı sarmalla!
               initial={{ opacity: 0, x: -45 }}
               animate={{ opacity: 1, y: 30 }}
               exit={{ opacity: 0, y: 0 }}
