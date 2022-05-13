@@ -3,6 +3,7 @@ import Logo from './Logo/index.js';
 import Search from './Search/index.js';
 import WidgetGroup from './WidgetGroup/index.js';
 import Modal from './Modal/index.js';
+import Navbar from './Navbar/index.js';
 export default function index() {
   return (
     <header>
@@ -15,6 +16,7 @@ export default function index() {
           <WidgetGroup />
         </div>
       </section>
+      <Navbar />
     </header>
   );
 }
