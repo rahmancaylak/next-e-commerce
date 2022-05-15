@@ -6,7 +6,7 @@ export default function index() {
       <Link href='/'>
         <img
           src='/Logo.png'
-          style={{ width: 'auto', height: '45px' }}
+          style={{ width: '175px', height: '45px' }}
           alt='company-logo'
           className='cursor-pointer'
         />
